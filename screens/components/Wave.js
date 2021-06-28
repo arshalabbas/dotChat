@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions } from "react-native";
 import Svg, { Path } from "react-native-svg";
-import colors from "../../global/colors";
+import colors from "../../configs/colors";
 
 const { width } = Dimensions.get('window');
 

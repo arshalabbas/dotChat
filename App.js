@@ -9,6 +9,9 @@ const Stack = createStackNavigator();
 //screen components
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
+//settings sub components
+import Feedback from "./screens/Feedback";
+import ReportLogs from "./screens/ReportLogs";
 import Notifications from "./screens/Notifications";
 import Chat from "./screens/Chat";
 
@@ -18,6 +21,7 @@ import HomeHeader from "./screens/components/Headers/HomeHeader";
 export default function App() {
   let [fontLoaded] = useFonts({
     "Bebas-Neue": require("./assets/fonts/Bebas-Neue/Bebas-Neue.ttf"),
+    "Nunito-Regular": require("./assets/fonts/Nunito/Nunito-Regular.ttf"),
     "Nunito-SemiBold": require("./assets/fonts/Nunito/Nunito-SemiBold.ttf"),
     "Nunito-Bold": require("./assets/fonts/Nunito/Nunito-Bold.ttf"),
   });
@@ -36,6 +40,20 @@ export default function App() {
           component={Settings}
           options={{
             title: "Settings",
+          }}
+        />
+        <Stack.Screen
+          name="feedback"
+          component={Feedback}
+          options={{
+            title: "Feedback",
+          }}
+        />
+        <Stack.Screen
+          name="report-logs"
+          component={ReportLogs}
+          options={{
+            title: "Report Logs",
           }}
         />
         <Stack.Screen

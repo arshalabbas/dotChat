@@ -5,11 +5,11 @@ import {
   Text,
   View,
   Linking,
-  Pressable,
   Image,
+  TouchableOpacity,
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
-import colors from "../../global/colors";
+import { useNavigation } from "@react-navigation/native";
+import colors from "../../configs/colors";
 
 const { width } = Dimensions.get("window");
 
@@ -41,7 +41,10 @@ export default function NotificationCard({
   };
 
   return (
-    <Pressable onPress={redirect ? redirectFromCard : null}>
+    <TouchableOpacity
+      onPress={redirect ? redirectFromCard : null}
+      activeOpacity={redirect ? 0.6 : 1}
+    >
       <View style={styles.container}>
         <View style={styles.headingSection}>
           <Text style={styles.title}>{title}</Text>
@@ -66,7 +69,7 @@ export default function NotificationCard({
           </View>
         ) : null}
       </View>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 

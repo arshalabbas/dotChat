@@ -11,7 +11,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-import colors from "../../../global/colors";
+import colors from "../../../configs/colors";
 
 //Dimensions
 const winHeight = Dimensions.get("window").height;

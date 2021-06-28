@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import colors from "../../global/colors";
+import colors from "../../configs/colors";
 
 export default function OnlineStatus() {
   const [onlineCount, setOnlineCount] = useState(62);

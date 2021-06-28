@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import colors from "../global/colors";
+import colors from "../configs/colors";
 
 //components
 import OnlineStatus from "./components/OnlineStatus";
 import Wave from "./components/Wave";
+import Button from "./components/Button";
 
 export default function Home({ navigation }) {
   return (
@@ -20,14 +21,10 @@ export default function Home({ navigation }) {
           <Text style={styles.heading}>Chat with strangers.</Text>
         </View>
         <View style={styles.section}>
-          <TouchableOpacity
-            activeOpacity={0.7}
+          <Button
+            title="find a dot"
             onPress={() => navigation.navigate("chat")}
-          >
-            <View style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>Find a dot</Text>
-            </View>
-          </TouchableOpacity>
+          />
         </View>
       </View>
     </View>
@@ -53,16 +50,5 @@ const styles = StyleSheet.create({
   heading: {
     fontFamily: "Nunito-SemiBold",
     fontSize: 28,
-  },
-  buttonContainer: {
-    backgroundColor: colors.primary,
-    paddingHorizontal: 50,
-    paddingVertical: 15,
-    borderRadius: 30,
-  },
-  buttonText: {
-    fontFamily: "Nunito-Bold",
-    letterSpacing: 0.6,
-    fontSize: 18,
   },
 });

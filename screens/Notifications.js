@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { RefreshControl, StyleSheet, Text, View, Dimensions, ScrollView } from "react-native";
+import {
+  RefreshControl,
+  StyleSheet,
+  Text,
+  Dimensions,
+  ScrollView,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import colors from "../global/colors";
+import colors from "../configs/colors";
 
 const { width } = Dimensions.get("window");
 
@@ -24,31 +30,65 @@ export default function Notifications() {
       title: "added settings screen",
       description:
         "theres settings to customize your app, you can change theme now...\n click this card to goto settings or you can simply click the gear icon from the homescreen.. :)",
-      redirect: "settings"
+      redirect: "settings",
     },
-    
+    {
+      category: "Update!",
+      title: "added chat feature",
+      description:
+        "hello, there we just started new app to chat with strangers... please support us... thanks by Arshal Abbas nub developer",
+    },
+    {
+      category: "New!",
+      title: "added settings screen",
+      description:
+        "theres settings to customize your app, you can change theme now...\n click this card to goto settings or you can simply click the gear icon from the homescreen.. :)",
+      redirect: "chat",
+    },
   ]);
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setNotifications((prev) => [
+        {
+          category: "test",
+          title: "testing refresh",
+          description: "nothing much",
+        },
+        ...prev,
+      ]);
+      setRefreshing(false);
+    }, 2000);
+  };
 
   return !notifications.length ? (
-    <View style={styles.emptyContainer}>
+    <ScrollView
+      contentContainerStyle={styles.emptyContainer}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+    >
       <Ionicons
         name="notifications-off-outline"
         style={styles.noNotificationsIcon}
       />
       <Text style={styles.nothingText}>Nothing here now</Text>
-    </View>
+    </ScrollView>
   ) : (
-    <ScrollView contentContainerStyle={styles.cardContainer}>
-        {notifications.map((data, key) => (
-          <NotificationCard
-            key={key}
-            category={data.category}
-            title={data.title}
-            description={data.description}
-            redirect={data.redirect}
-            image={data.image}
-          />
-        ))}
+    <ScrollView
+      contentContainerStyle={styles.cardContainer}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+    >
+      {notifications.map((data, key) => (
+        <NotificationCard
+          key={key}
+          category={data.category}
+          title={data.title}
+          description={data.description}
+          redirect={data.redirect}
+          image={data.image}
+        />
+      ))}
     </ScrollView>
   );
 }
