@@ -14,8 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "../../../configs/colors";
 
 //Dimensions
-const winHeight = Dimensions.get("window").height;
-const winWidth = Dimensions.get("window").width;
+const { width, height } = Dimensions.get("window");
 
 export default function HomeHeader() {
   const [newNotifications, setNewNotifications] = useState(false);
@@ -64,8 +63,8 @@ export default function HomeHeader() {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    height: winHeight * 0.1,
-    width: winWidth,
+    height: height * 0.1,
+    width: width,
     backgroundColor: colors.primary,
     alignItems: "flex-end",
     justifyContent: "center",

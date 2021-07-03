@@ -6,7 +6,7 @@ import colors from "../configs/colors";
 //components
 import Button from "./components/Button";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 export default function Feedback() {
   const [feedback, setFeedback] = useState("");
@@ -22,7 +22,7 @@ export default function Feedback() {
       <TextInput
         placeholder="type your feedback..."
         multiline={true}
-        numberOfLines={6}
+        numberOfLines={10}
         style={styles.textArea}
         onChangeText={setFeedback}
         value={feedback}

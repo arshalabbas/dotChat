@@ -1,6 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import colors from "../configs/colors";
+
+const { width } = Dimensions.get("window");
 
 //components
 import OnlineStatus from "./components/OnlineStatus";
@@ -38,6 +40,7 @@ const styles = StyleSheet.create({
   },
   waveContainer: {
     height: 80,
+    width: width,
   },
   section: {
     marginVertical: 33,

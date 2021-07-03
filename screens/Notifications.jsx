@@ -23,7 +23,7 @@ export default function Notifications() {
         "hello, there we just started new app to chat with strangers... please support us... thanks by Arshal Abbas nub developer",
       redirect: "https://www.youtube.com/",
       image:
-        "https://i.ibb.co/5BjNgvF/MV5-BNGZj-MGM1-MTgt-ZTAw-My00-Nm-Ew-LTg5-NTMt-OGJl-Yj-I3-Y2-Uz-Mz-Vl-Xk-Ey-Xk-Fqc-Gde-QXVy-Mj-Yw-MDk.jpg",
+        "https://i.ibb.co/TB5ymRh/wania-radio.png",
     },
     {
       category: "New!",
@@ -55,7 +55,7 @@ export default function Notifications() {
         {
           category: "test",
           title: "testing refresh",
-          description: "nothing much",
+          description: "hehehe...",
         },
         ...prev,
       ]);

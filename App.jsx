@@ -17,6 +17,7 @@ import Chat from "./screens/Chat";
 
 //header components
 import HomeHeader from "./screens/components/Headers/HomeHeader";
+import ChatHeader from "./screens/components/Headers/ChatHeader";
 
 export default function App() {
   let [fontLoaded] = useFonts({
@@ -63,7 +64,13 @@ export default function App() {
             title: "Alerts and Notifications",
           }}
         />
-        <Stack.Screen name="chat" component={Chat} />
+        <Stack.Screen
+          name="chat"
+          component={Chat}
+          options={{
+            header: () => <ChatHeader />,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
