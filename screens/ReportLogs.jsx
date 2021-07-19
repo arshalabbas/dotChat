@@ -17,7 +17,7 @@ export default function ReportLogs() {
       <Text style={styles.infoText}>
         {"We have logged some errors and bugs in your local storage that detected when used this app." +
           "\nIf we got those logs, we can make some improvements to our app." +
-          '\nWe didn\'t collect any of your personal data. If you mind please send those logs to us by pressing the "accept" button.'}
+          '\nWe didn\'t collect any of your personal data. If you mind please send those logs to us by pressing the "Accept" button.'}
       </Text>
       <Button title="Accept" onPress={() => alert("need to code it!")} />
     </View>

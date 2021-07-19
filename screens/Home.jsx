@@ -7,6 +7,7 @@ const { width } = Dimensions.get("window");
 //components
 import OnlineStatus from "./components/OnlineStatus";
 import Wave from "./components/Wave";
+import Stats from "./components/Stats";
 import Button from "./components/Button";
 
 export default function Home({ navigation }) {
@@ -21,6 +22,9 @@ export default function Home({ navigation }) {
       <View style={styles.joinSection}>
         <View style={styles.section}>
           <Text style={styles.heading}>Chat with strangers.</Text>
+        </View>
+        <View style={styles.section}>
+          <Stats />
         </View>
         <View style={styles.section}>
           <Button
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
     width: width,
   },
   section: {
-    marginVertical: 33,
+    marginVertical: 12,
   },
   joinSection: {
     justifyContent: "center",

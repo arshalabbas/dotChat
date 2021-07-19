@@ -6,7 +6,6 @@ import {
   Dimensions,
   StatusBar,
   TouchableOpacity,
-  Image,
 } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -38,10 +37,6 @@ export default function ChatHeader() {
       <View style={styles.statusBar}></View>
       <View style={styles.container}>
         <View style={styles.botMessagesContainer}>
-          <Image
-            style={styles.botImage}
-            source={require("../../../assets/images/bot.png")}
-          />
           <View style={styles.messageContainer}>
             <Text style={styles.botMessage}>{botMessage}</Text>
           </View>
